@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
+import { currencySelector, currentCurrencySelector } from "../../../selectors";
+import { toggleCurrentCurrency as toggle } from "../../../actions";
 
 const Tabs = styled.ul`
   display: flex;
@@ -17,16 +20,22 @@ const Tab = styled.li`
 
   font-size: 12px;
   margin-left: -1px;
-  background-color: ${props => (props.selected ? "#2196F3" : "white")};
-  color: ${props => (props.selected ? "white" : "#2196f3")};
-  border-color: ${props => (props.selected ? "#2196F3" : "#d2d5d6")};
+  background-color: white;
+  color: #2196f3;
+  border-color: #d2d5d6;
+
   &:first-child {
     border-radius: 5px 0 0 5px;
   }
   &:last-child {
     border-radius: 0 5px 5px 0;
   }
-  &:hover {
+  &.selected {
+    background-color: #2196f3;
+    color: white;
+    border-color: #2196f3;
+  }
+  &:hover:not(.selected) {
     background-color: #f2fcff;
     border-color: #64b5f5;
     position: relative;
@@ -34,12 +43,29 @@ const Tab = styled.li`
   }
 `;
 
-export default () => {
+const CurrencySwitcher = ({ currency, current, toggle }) => {
+  console.log(Object.keys(currency));
   return (
     <Tabs>
-      <Tab selected>RU</Tab>
-      <Tab>USD</Tab>
-      <Tab>EUR</Tab>
+      {Object.keys(currency).map(key => (
+        <Tab
+          key={key}
+          className={current === key ? "selected" : ""}
+          onClick={() => toggle(key)}
+        >
+          {key}
+        </Tab>
+      ))}
     </Tabs>
   );
 };
+
+const mapStateToProps = state => ({
+  currency: currencySelector(state),
+  current: currentCurrencySelector(state)
+});
+
+export default connect(
+  mapStateToProps,
+  { toggle }
+)(CurrencySwitcher);
