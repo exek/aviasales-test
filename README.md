@@ -4,7 +4,7 @@
 
 ### Рендер билетов (#task1)
 
-Используйте React для того чтобы отрендерить билеты с данными сортированные по цене из файла [tickets.json](./tickets.json).
+Используйте React для того чтобы отрендерить билеты с данными сортированные по цене из файла [tickets.json](https://github.com/KosyanMedia/test-tasks/blob/master/aviasales/tickets.json).
 
 ### Фильтрация билетов (#task2)
 
@@ -16,7 +16,7 @@
 
 ### Верстка билета, фильтра, переключения валют (#task4)
 
-Внутри команды мы используем Sketch (v49), поэтому исходники есть в [.sketch](./search.sketch) и [.png](./search.png). Если у вас нет нужных программ, то воспользуйтесь онлайн аналогами.
+Внутри команды мы используем Sketch (v49), поэтому исходники есть в [.sketch](https://github.com/KosyanMedia/test-tasks/blob/master/aviasales/search.sketch) и [.png](https://github.com/KosyanMedia/test-tasks/blob/master/aviasales/search.png). Если у вас нет нужных программ, то воспользуйтесь онлайн аналогами.
 
 ### Необязательные задачи
 
