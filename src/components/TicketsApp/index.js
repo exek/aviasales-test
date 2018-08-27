@@ -28,16 +28,12 @@ const Header = styled.header`
 `;
 
 injectGlobal`
-@font-face {
-  font-family: 'Operator Mono';
-  src: url('../fonts/Operator-Mono.ttf');
-}
-
-body {
-  margin: 0;
-  background-color: #F3F7FA;
-  color: #4A4A4A;
-}
+  body {
+    margin: 0;
+    background-color: #F3F7FA;
+    color: #4A4A4A;
+    font-family: 'Open Sans', sans-serif;
+  }
 `;
 
 class App extends Component {
