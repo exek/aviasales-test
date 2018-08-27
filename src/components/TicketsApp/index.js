@@ -32,7 +32,7 @@ injectGlobal`
     margin: 0;
     background-color: #F3F7FA;
     color: #4A4A4A;
-    font-family: 'Open Sans', sans-serif;
+    font-family: Helvetica, 'Open Sans', sans-serif;
   }
 `;
 
