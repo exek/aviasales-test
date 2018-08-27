@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Ticket from "./Ticket";
-import { sortedTicketsByPriceSelector as tickets } from "../../selectors";
+import { sortedAndFilteredTicketsSelector as tickets } from "../../selectors";
 import styled from "styled-components";
 
 const List = styled.ul`

@@ -1,29 +1,33 @@
 import React from "react";
+import { connect } from "react-redux";
+import { transfersFilterSelector } from "../../../selectors";
+import { toggleTransfersFilter as toggle } from "../../../actions";
 
-export default () => {
+const TransfersFilter = ({ filters, toggle }) => {
+  console.log(filters);
   return (
     <ul>
-      <li>
-        <label>
-          <input type="checkbox" />
-          All
-        </label>
-      </li>
-      <li>
-        <label>
-          <input type="checkbox" />1
-        </label>
-      </li>
-      <li>
-        <label>
-          <input type="checkbox" />2
-        </label>
-      </li>
-      <li>
-        <label>
-          <input type="checkbox" />3
-        </label>
-      </li>
+      {Object.keys(filters).map(key => (
+        <li key={key}>
+          <label>
+            <input
+              type="checkbox"
+              checked={filters[key]}
+              onChange={() => toggle(key)}
+            />
+            {key}
+          </label>
+        </li>
+      ))}
     </ul>
   );
 };
+
+const mapStateToProps = state => ({
+  filters: transfersFilterSelector(state)
+});
+
+export default connect(
+  mapStateToProps,
+  { toggle }
+)(TransfersFilter);
