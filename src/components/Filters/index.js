@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import CurrencyFilter from "./CurrencyFilter";
+import TransfersFilter from "./TransfersFilter";
 
 const Wrapper = styled.div`
   background-color: #fff;
@@ -12,46 +14,20 @@ const Section = styled.section`
   margin-bottom: 30px;
 `;
 
-const Title = styled.h2``;
+const Title = styled.h2`
+  font-size: 16px;
+`;
 
 export default () => {
   return (
     <Wrapper>
       <Section>
-        <h2 className="aside-title">Currency</h2>
-        <ul className="currensy-filter__controls">
-          <li>
-            <button>Rub</button>
-            <button>Usd</button>
-            <button>Eur</button>
-          </li>
-        </ul>
+        <Title>Currency</Title>
+        <CurrencyFilter />
       </Section>
       <Section>
-        <h2 className="aside-title">Number of transfers</h2>
-        <ul className="transfer-count-filter__controls">
-          <li className="transfer-count-filter__control">
-            <label>
-              <input type="checkbox" />
-              All
-            </label>
-          </li>
-          <li className="transfer-count-filter__control">
-            <label>
-              <input type="checkbox" />1
-            </label>
-          </li>
-          <li className="transfer-count-filter__control">
-            <label>
-              <input type="checkbox" />2
-            </label>
-          </li>
-          <li className="transfer-count-filter__control">
-            <label>
-              <input type="checkbox" />3
-            </label>
-          </li>
-        </ul>
+        <Title>Number of transfers</Title>
+        <TransfersFilter />
       </Section>
     </Wrapper>
   );
