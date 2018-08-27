@@ -6,6 +6,7 @@ const Box = styled.article`
   box-shadow: 0 1px 4px rgba(91, 137, 164);
   border-radius: 5px;
   display: flex;
+  margin-bottom: 20px;
 `;
 
 const Left = styled.div`
@@ -23,6 +24,13 @@ const Right = styled.div`
 
 const Transfer = styled.div`
   flex: 1;
+  text-align: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #8b9497;
+  align-self: flex-start;
+  padding-bottom: 20px;
+  background: url(plane.png) no-repeat center center;
 `;
 
 const BuyButton = styled.button`
@@ -33,7 +41,34 @@ const BuyButton = styled.button`
   color: white;
   border-radius: 5px;
   border: 0
-  box-shadow: 0 1px 0 #D64D08;
+  box-shadow: 0 1px 0 #D64D08, 0 0 5px rgba(0,0,0,.25);
+  cursor: pointer;
+`;
+
+const Time = styled.time`
+  font-size: 32px;
+`;
+
+const Place = styled.p`
+  margin: 10px 0 5px;
+  font-size: 12px;
+`;
+
+const Date = styled.time`
+  font-size: 12px;
+  color: #8b9497;
+`;
+
+const Origin = styled.div`
+  text-align: left;
+`;
+
+const Destination = styled.div`
+  text-align: right;
+`;
+
+const AirlineLogo = styled.div`
+  padding: 20px 0;
 `;
 
 export default ({
@@ -52,9 +87,9 @@ export default ({
   return (
     <Box>
       <Left>
-        <div>
+        <AirlineLogo>
           <img src="turkish-logo.png" alt="" />
-        </div>
+        </AirlineLogo>
         <BuyButton>
           Купить
           <br /> за {price.toFixed(2)}
@@ -62,28 +97,21 @@ export default ({
         </BuyButton>
       </Left>
       <Right>
-        <div>
-          <p>{departure_time}</p>
-          <p>
+        <Origin>
+          <Time>{departure_time}</Time>
+          <Place>
             {origin}, {origin_name}
-          </p>
-          <p>{departure_date}</p>
-        </div>
-        <Transfer>
-          {stops > 0 && (
-            <div>
-              {stops}
-              <br /> Пересадки
-            </div>
-          )}
-        </Transfer>
-        <div>
-          <p>{arrival_time}</p>
-          <p>
+          </Place>
+          <Date>{departure_date}</Date>
+        </Origin>
+        <Transfer>{stops > 0 && <div>{stops} Пересадки</div>}</Transfer>
+        <Destination>
+          <Time>{arrival_time}</Time>
+          <Place>
             {destination}, {destination_name}
-          </p>
-          <p>{arrival_date}</p>
-        </div>
+          </Place>
+          <Date>{arrival_date}</Date>
+        </Destination>
       </Right>
     </Box>
   );
