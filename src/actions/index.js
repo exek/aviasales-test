@@ -1,6 +1,6 @@
-import * as actionTypes from "./actionTypes";
+import * as constants from "../constants";
 
 export const toggleTransfersFilter = key => ({
-  type: actionTypes.TOGGLE_TRANSFERS_FILTER,
+  type: constants.TOGGLE_TRANSFERS_FILTER,
   key
 });

@@ -1,4 +1,4 @@
-import * as actionTypes from "../actions/actionTypes";
+import * as constants from "../constants";
 
 const init = {
   transfers: {
@@ -12,7 +12,7 @@ const init = {
 
 export default (state = init, action) => {
   switch (action.type) {
-    case actionTypes.TOGGLE_TRANSFERS_FILTER:
+    case constants.TOGGLE_TRANSFERS_FILTER:
       return {
         ...state,
         transfers: {
