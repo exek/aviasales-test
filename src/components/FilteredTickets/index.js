@@ -7,6 +7,7 @@ import {
 } from "../../selectors";
 import styled from "styled-components";
 import i18n from "../../i18n";
+import { Transition } from "react-spring";
 
 const List = styled.ul`
   list-style: none;
@@ -16,11 +17,18 @@ const List = styled.ul`
 
 const FilteredTickets = ({ tickets, currentCurrency }) => (
   <List>
-    {tickets.map(ticket => (
-      <li key={ticket.price}>
-        <Ticket {...ticket} currentCurrency={currentCurrency} />
-      </li>
-    ))}
+    <Transition
+      keys={tickets.map(item => item.price)}
+      from={{ opacity: 0, height: 0 }}
+      enter={{ opacity: 1, height: "auto" }}
+      leave={{ opacity: 0, height: 0 }}
+    >
+      {tickets.map(ticket => styles => (
+        <li style={styles}>
+          <Ticket {...ticket} currentCurrency={currentCurrency} />
+        </li>
+      ))}
+    </Transition>
   </List>
 );
 
