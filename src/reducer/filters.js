@@ -2,11 +2,11 @@ import * as actionTypes from "../actions/actionTypes";
 
 const init = {
   transfers: {
-    all: true,
-    "0": false,
-    "1": false,
-    "2": false,
-    "3": false
+    ":all": true,
+    ":0": false,
+    ":1": false,
+    ":2": false,
+    ":3": false
   }
 };
 

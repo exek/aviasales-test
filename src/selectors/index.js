@@ -12,5 +12,5 @@ export const sortedAndFilteredTicketsSelector = createSelector(
   sortedTicketsByPriceSelector,
   transfersFilterSelector,
   (items, filters) =>
-    filters["all"] ? items : items.filter(item => filters[item.stops])
+    filters[":all"] ? items : items.filter(item => filters[`:${item.stops}`])
 );

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { transfersFilterSelector } from "../../../selectors";
 import { toggleTransfersFilter as toggle } from "../../../actions";
+import dictionary from "../../../i18n";
 
 const TransfersFilter = ({ filters, toggle }) => {
   console.log(filters);
@@ -15,7 +16,7 @@ const TransfersFilter = ({ filters, toggle }) => {
               checked={filters[key]}
               onChange={() => toggle(key)}
             />
-            {key}
+            {dictionary[key]}
           </label>
         </li>
       ))}
