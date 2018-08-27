@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import CurrencyFilter from "./CurrencyFilter";
+import CurrencySwitcher from "./CurrencySwitcher";
 import TransfersFilter from "./TransfersFilter";
 
 const Wrapper = styled.div`
@@ -23,7 +23,7 @@ export default () => {
     <Wrapper>
       <Section>
         <Title>Currency</Title>
-        <CurrencyFilter />
+        <CurrencySwitcher />
       </Section>
       <Section>
         <Title>Number of transfers</Title>
