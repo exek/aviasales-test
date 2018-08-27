@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import i18n from "../../../i18n";
 
 const Box = styled.article`
   background-color: #fff;
@@ -104,7 +105,7 @@ export default ({
           </Place>
           <Date>{departure_date}</Date>
         </Origin>
-        <Transfer>{stops > 0 && <div>{stops} Пересадки</div>}</Transfer>
+        <Transfer>{stops > 0 && <div>{i18n[`:${stops}`]}</div>}</Transfer>
         <Destination>
           <Time>{arrival_time}</Time>
           <Place>
