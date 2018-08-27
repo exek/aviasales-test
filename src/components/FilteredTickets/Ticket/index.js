@@ -36,7 +36,18 @@ const BuyButton = styled.button`
   box-shadow: 0 1px 0 #D64D08;
 `;
 
-export default () => {
+export default ({
+  origin,
+  origin_name,
+  destination,
+  destination_name,
+  departure_date,
+  departure_time,
+  arrival_date,
+  arrival_time,
+  stops,
+  price
+}) => {
   return (
     <Box>
       <Left>
@@ -45,22 +56,31 @@ export default () => {
         </div>
         <BuyButton>
           Купить
-          <br /> за 15000₽
+          <br /> за {price}₽
         </BuyButton>
       </Left>
       <Right>
-        <div className="departure">
-          <p>09:25</p>
-          <p>VVO, Владивосток</p>
-          <p>9 окт 2018, Пт</p>
+        <div>
+          <p>{departure_time}</p>
+          <p>
+            {origin}, {origin_name}
+          </p>
+          <p>{departure_date}</p>
         </div>
         <Transfer>
-          1<br /> Пересадка
+          {stops > 0 && (
+            <div>
+              {stops}
+              <br /> Пересадки
+            </div>
+          )}
         </Transfer>
-        <div className="departure">
-          <p>09:25</p>
-          <p>VVO, Владивосток</p>
-          <p>9 окт 2018, Пт</p>
+        <div>
+          <p>{arrival_time}</p>
+          <p>
+            {destination}, {destination_name}
+          </p>
+          <p>{arrival_date}</p>
         </div>
       </Right>
     </Box>
