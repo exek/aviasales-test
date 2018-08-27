@@ -15,18 +15,20 @@ const Section = styled.section`
 `;
 
 const Title = styled.h2`
-  font-size: 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: normal;
 `;
 
 export default () => {
   return (
     <Wrapper>
       <Section>
-        <Title>Currency</Title>
+        <Title>Валюта</Title>
         <CurrencySwitcher />
       </Section>
       <Section>
-        <Title>Number of transfers</Title>
+        <Title>Количество пересадок</Title>
         <TransfersFilter />
       </Section>
     </Wrapper>

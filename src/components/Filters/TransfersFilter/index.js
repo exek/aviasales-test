@@ -1,24 +1,34 @@
 import React from "react";
+import styled from "styled-components";
 import { connect } from "react-redux";
 import { transfersFilterSelector } from "../../../selectors";
 import { toggleTransfersFilter as toggle } from "../../../actions";
 import dictionary from "../../../i18n";
 
+const FilterList = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
+const ListItem = styled.li`
+  font-size: 13px;
+`;
+
 const TransfersFilter = ({ filters, toggle }) => (
-  <ul>
+  <FilterList>
     {Object.keys(filters).map(key => (
-      <li key={key}>
-        <label>
-          <input
-            type="checkbox"
-            checked={filters[key]}
-            onChange={() => toggle(key)}
-          />
-          {dictionary[key]}
-        </label>
-      </li>
+      <ListItem key={key}>
+        <input
+          style={{ fontSize: 25 }}
+          type="checkbox"
+          checked={filters[key]}
+          onChange={() => toggle(key)}
+        />
+        <label>{dictionary[key]}</label>
+      </ListItem>
     ))}
-  </ul>
+  </FilterList>
 );
 
 const mapStateToProps = state => ({
