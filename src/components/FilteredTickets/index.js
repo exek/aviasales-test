@@ -10,18 +10,15 @@ const List = styled.ul`
   padding: 0;
 `;
 
-const FilteredTickets = ({ tickets }) => {
-  console.log(tickets);
-  return (
-    <List>
-      {tickets.map(ticket => (
-        <li key={ticket.price}>
-          <Ticket {...ticket} />
-        </li>
-      ))}
-    </List>
-  );
-};
+const FilteredTickets = ({ tickets }) => (
+  <List>
+    {tickets.map(ticket => (
+      <li key={ticket.price}>
+        <Ticket {...ticket} />
+      </li>
+    ))}
+  </List>
+);
 
 const mapStateToProps = state => ({
   tickets: tickets(state)
