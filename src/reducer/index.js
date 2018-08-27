@@ -1,8 +1,8 @@
-import { combinerReducers } from "react-redux";
+import { combineReducers } from "redux";
 import filters from "./filters";
 import tickets from "./tickets";
 
-export default combinerReducers({
+export default combineReducers({
   filters,
   tickets
 });
