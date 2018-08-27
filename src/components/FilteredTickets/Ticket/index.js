@@ -46,7 +46,8 @@ export default ({
   arrival_date,
   arrival_time,
   stops,
-  price
+  price,
+  currentCurrency
 }) => {
   return (
     <Box>
@@ -56,7 +57,8 @@ export default ({
         </div>
         <BuyButton>
           Купить
-          <br /> за {price}₽
+          <br /> за {price.toFixed(2)}
+          {currentCurrency}
         </BuyButton>
       </Left>
       <Right>

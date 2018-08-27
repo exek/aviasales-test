@@ -7,7 +7,12 @@ export const currentCurrencySelector = state => state.currency.current;
 
 export const sortedTicketsByPriceSelector = createSelector(
   ticketsSelector,
-  items => [...items].sort((a, b) => a.price - b.price)
+  currencySelector,
+  currentCurrencySelector,
+  (items, rates, current) =>
+    [...items]
+      .sort((a, b) => a.price - b.price)
+      .map(item => ({ ...item, price: rates[current] * item.price }))
 );
 
 export const sortedAndFilteredTicketsSelector = createSelector(
