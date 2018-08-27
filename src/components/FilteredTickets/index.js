@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import Ticket from "./Ticket";
 
 import styled from "styled-components";
@@ -9,12 +10,21 @@ const List = styled.ul`
   padding: 0;
 `;
 
-export default () => {
+const FilteredTickets = ({ tickets }) => {
+  console.log(tickets);
   return (
     <List>
-      <li>
-        <Ticket />
-      </li>
+      {tickets.map(ticket => (
+        <li key={ticket.price}>
+          <Ticket {...ticket} />
+        </li>
+      ))}
     </List>
   );
 };
+
+const mapStateToProps = state => ({
+  tickets: state.tickets.data
+});
+
+export default connect(mapStateToProps)(FilteredTickets);
