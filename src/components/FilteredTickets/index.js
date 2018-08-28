@@ -29,22 +29,24 @@ class FilteredTickets extends Component {
       <Fragment>
         {loading && <p>Загрузка...</p>}
         {error && <p>Ошибка {error.message}</p>}
-        {tickets.length && !loading && (
-          <List>
-            <Transition
-              keys={tickets.map(item => item.id)}
-              from={{ opacity: 0, height: 0 }}
-              enter={{ opacity: 1, height: "auto" }}
-              leave={{ opacity: 0, height: 0 }}
-            >
-              {tickets.map(ticket => styles => (
-                <li style={styles}>
-                  <Ticket {...ticket} currentCurrency={currentCurrency} />
-                </li>
-              ))}
-            </Transition>
-          </List>
-        )}
+        {tickets.length > 0 &&
+          !loading && (
+            <List>
+              <Transition
+                keys={tickets.map(item => item.id)}
+                from={{ opacity: 0, height: 0 }}
+                enter={{ opacity: 1, height: "auto" }}
+                leave={{ opacity: 0, height: 0 }}
+              >
+                {tickets.map(ticket => styles => (
+                  <li style={styles}>
+                    <Ticket {...ticket} currentCurrency={currentCurrency} />
+                  </li>
+                ))}
+              </Transition>
+            </List>
+          )}
+        {tickets.length === 0 && !loading && <p>По запросу не найдено</p>}
       </Fragment>
     );
   }
