@@ -20,7 +20,6 @@ const Left = styled.div`
 const Right = styled.div`
   flex: 1;
   padding: 25px 20px;
-  display: flex;
 `;
 
 const Transfer = styled.div`
@@ -48,6 +47,7 @@ const BuyButton = styled.button`
 
 const Time = styled.time`
   font-size: 32px;
+  line-height: 1;
 `;
 
 const Place = styled.p`
@@ -70,6 +70,12 @@ const Destination = styled.div`
 
 const AirlineLogo = styled.div`
   padding: 20px 0;
+`;
+
+const Row = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 `;
 
 export default ({
@@ -98,21 +104,27 @@ export default ({
         </BuyButton>
       </Left>
       <Right>
-        <Origin>
+        <Row>
           <Time>{departure_time}</Time>
-          <Place>
-            {origin}, {origin_name}
-          </Place>
-          <Date>{departure_date}</Date>
-        </Origin>
-        <Transfer>{stops > 0 && <div>{i18n[`:${stops}`]}</div>}</Transfer>
-        <Destination>
+          <Transfer>{stops > 0 && <div>{i18n[`:${stops}`]}</div>}</Transfer>
           <Time>{arrival_time}</Time>
-          <Place>
-            {destination}, {destination_name}
-          </Place>
-          <Date>{arrival_date}</Date>
-        </Destination>
+        </Row>
+
+        <Row>
+          <Origin>
+            <Place>
+              {origin}, {origin_name}
+            </Place>
+            <Date>{departure_date}</Date>
+          </Origin>
+
+          <Destination>
+            <Place>
+              {destination}, {destination_name}
+            </Place>
+            <Date>{arrival_date}</Date>
+          </Destination>
+        </Row>
       </Right>
     </Box>
   );

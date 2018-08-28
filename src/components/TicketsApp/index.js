@@ -4,7 +4,7 @@ import Controls from "../Controls";
 import FilteredTicket from "../FilteredTickets";
 
 const Wrapper = styled.div`
-  max-width: 1024px;
+  max-width: 818px;
   margin: auto;
 `;
 const Container = styled.div`
