@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled, { injectGlobal } from "styled-components";
-import Filters from "../Filters";
+import Controls from "../Controls";
 import FilteredTicket from "../FilteredTickets";
 
 const Wrapper = styled.div`
@@ -43,7 +43,7 @@ class App extends Component {
         <Container>
           <Header />
           <Aside>
-            <Filters />
+            <Controls />
           </Aside>
           <Content>
             <FilteredTicket />
