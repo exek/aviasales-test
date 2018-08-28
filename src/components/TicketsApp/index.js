@@ -11,7 +11,7 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 0 10px;
-  @media and (min-width: 640px) {
+  @media (min-width: 640px) {
     margin-left: -20px;
     padding: 0;
   }
@@ -19,7 +19,7 @@ const Container = styled.div`
 
 const Aside = styled.aside`
   width: 100%;
-  @media and (min-width: 640px) {
+  @media (min-width: 640px) {
     margin-left: 20px;
     flex: 3;
   }
@@ -27,7 +27,7 @@ const Aside = styled.aside`
 
 const Content = styled.main`
   width: 100%;
-  @media and (min-width: 640px) {
+  @media (min-width: 640px) {
     margin-left: 20px;
     flex: 9;
   }
