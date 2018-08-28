@@ -8,13 +8,22 @@ const Box = styled.article`
   border-radius: 5px;
   display: flex;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+  @media (min-width: 640px) {
+    flex-wrap: nowrap;
+  }
 `;
 
 const Left = styled.div`
-  flex: 0 1 200px;
+  width: 100%;
   padding: 25px 20px;
-  border-right: 1px solid #eceff1;
   text-align: center;
+  order: 2;
+  @media (min-width: 640px) {
+    flex: 0 1 200px;
+    order: initial;
+    border-right: 1px solid #eceff1;
+  }
 `;
 
 const Right = styled.div`

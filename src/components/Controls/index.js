@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   box-shadow: 0 1px 4px rgba(91, 137, 164);
   border-radius: 5px;
   padding: 25px 20px;
+  margin-bottom: 20px;
 `;
 
 const Section = styled.section`

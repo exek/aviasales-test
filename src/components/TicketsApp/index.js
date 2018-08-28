@@ -10,16 +10,29 @@ const Wrapper = styled.div`
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-left: -20px;
+  padding: 0 10px;
+  @media and (min-width: 640px) {
+    margin-left: -20px;
+    padding: 0;
+  }
 `;
+
 const Aside = styled.aside`
-  margin-left: 20px;
-  flex: 3;
+  width: 100%;
+  @media and (min-width: 640px) {
+    margin-left: 20px;
+    flex: 3;
+  }
 `;
+
 const Content = styled.main`
-  margin-left: 20px;
-  flex: 9;
+  width: 100%;
+  @media and (min-width: 640px) {
+    margin-left: 20px;
+    flex: 9;
+  }
 `;
+
 const Header = styled.header`
   margin-left: 20px;
   width: 100%;
