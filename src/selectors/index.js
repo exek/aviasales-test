@@ -1,6 +1,8 @@
 import { createSelector } from "reselect";
 
 export const ticketsSelector = state => state.tickets.data;
+export const ticketsLoadingSelector = state => state.tickets.loading;
+export const ticketsErrorSelector = state => state.tickets.error;
 export const transfersFilterSelector = state => state.filters.transfers;
 export const currencySelector = state => state.currency.data;
 export const currentCurrencySelector = state => state.currency.current;

@@ -28,7 +28,7 @@ const Transfer = styled.div`
   font-size: 10px;
   text-transform: uppercase;
   color: #8b9497;
-  align-self: flex-start;
+  align-self: center;
   padding-bottom: 20px;
   background: url(plane.png) no-repeat center center;
 `;
