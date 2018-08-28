@@ -1,6 +1,6 @@
 # Тестовое задание Aviasales [link](https://github.com/KosyanMedia/test-tasks/tree/master/aviasales)
 
-[DEMO](https://aviasales-testapp.herokuapp.com/)
+[DEMO(может потребоваться время для старта сервера)](https://aviasales-testapp.herokuapp.com/)
 
 ## Задачи
 
