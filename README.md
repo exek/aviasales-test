@@ -20,9 +20,34 @@
 
 Внутри команды мы используем Sketch (v49), поэтому исходники есть в [.sketch](https://github.com/KosyanMedia/test-tasks/blob/master/aviasales/search.sketch) и [.png](https://github.com/KosyanMedia/test-tasks/blob/master/aviasales/search.png). Если у вас нет нужных программ, то воспользуйтесь онлайн аналогами.
 
-### Необязательные задачи
+### Дополнительные задачи
 
 - Респонсивность до 320px на ваш выбор (#task5);
 - Сделать, чтобы json с билетами асинхронно подтягивался с локального сервера при инициализации (#task6).
 
-Удачи, если будут какие-то вопросы, то пишите, добавим уточнения в репу.
+## Реализация
+
+Использованы библиотеки
+
+- React
+- redux
+- reselect
+- redux-thunk(для асинхронных экшенов по закгрузке билетов с сервера)
+- styled-components(для стилизации компонентов)
+- react-scripts(для простой анимации в выводе билетов)
+
+# Install
+
+To install dependencies
+
+```shell
+npm install
+```
+
+# Run
+
+To run app
+
+```shell
+npm start
+```
